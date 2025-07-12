@@ -41,7 +41,7 @@ This system allows admins to manage flights, airlines, airports, and users, whil
 1. **Clone the repository**
    - Click the green `Code` button above and select `Download ZIP` or use:
      ```sh
-     git clone <repo-url>
+     git clone https://github.com/MIbrahimPro/AirlineManagement.git
      cd backend
      ```
 
