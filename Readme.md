@@ -29,46 +29,31 @@ This system allows admins to manage flights, airlines, airports, and users, whil
 
 ---
 
-## 🚀 Getting Started
+## 🚀 Getting Started (For Everyone)
 
-### Prerequisites
-- [Node.js](https://nodejs.org/) (v18+ recommended)
-- [MongoDB](https://www.mongodb.com/try/download/community)
-- [Git](https://git-scm.com/downloads)
+**No coding experience needed!**
 
-### Installation & Setup
+1. **Open VS Code** (or any code editor) and open a new empty folder.
+2. **Open the terminal:**
+   - Shortcut: <kbd>Ctrl</kbd> + <kbd>`</kbd> (backtick)
+   - Or: Menu → View → Terminal
+   - Or: Open Command Prompt (Windows) or Terminal (Mac/Linux)
+3. **Copy and paste this command and press Enter:**
 
-1. **Clone the repository**
-   - Click the green `Code` button above and select `Download ZIP` or use:
-     ```sh
-     git clone https://github.com/MIbrahimPro/AirlineManagement.git
-     cd backend
-     ```
-
-2. **Install dependencies**
    ```sh
-   npm install
+   (git --version 2>&1 >nul || (echo ============================== && echo Git is not installed! && echo Please install Git from: https://git-scm.com/downloads && echo ============================== && exit /b 1)) && git clone https://github.com/MIbrahimPro/AirlineManagement.git && cd AirlineManagement/backend && node scripts/initialize.js
    ```
 
-3. **Configure environment variables**
-   - Create a `.env` file in the root directory with the following content:
-     ```env
-     MONGO_URI=mongodb://localhost:27017/simpleAirline
-     PORT=5000
-     JWT_SECRET=your_jwt_secret
-     SESSION_SECRET=your_session_secret
-     ```
+**If you see a message about Git not being installed,** please install it from [git-scm.com/downloads](https://git-scm.com/downloads) and try again.
 
-4. **Seed the database with demo data**
-   ```sh
-   node scripts/seed.js
-   ```
+**What this does:**
+- Checks if you have Git, Node.js, and MongoDB installed (shows download links if missing)
+- Downloads all project files
+- Sets up everything automatically: environment, dependencies, database, demo data
+- Shows demo login info
+- Starts the server and opens the app in your browser
 
-5. **Start the server**
-   ```sh
-   npm start
-   ```
-   The app will run at [http://localhost:5000](http://localhost:5000)
+That’s it! You’re ready to use the Airline Management System.
 
 ---
 
