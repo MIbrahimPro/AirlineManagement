@@ -52,11 +52,15 @@ const child = spawn(process.platform === 'win32' ? 'npm.cmd' : 'npm', ['start'],
 // 7. Open browser
 setTimeout(() => {
     const url = 'http://localhost:5000';
-    if (process.platform === 'win32') {
-        execSync(`start ${url}`);
-    } else if (process.platform === 'darwin') {
-        execSync(`open ${url}`);
-    } else {
-        execSync(`xdg-open ${url}`);
+    try {
+        if (process.platform === 'win32') {
+            execSync(`start ${url}`);
+        } else if (process.platform === 'darwin') {
+            execSync(`open ${url}`);
+        } else {
+            execSync(`xdg-open ${url}`);
+        }
+    } catch (e) {
+        console.log('\nPlease open your browser and go to: ' + url + '\n');
     }
 }, 4000);

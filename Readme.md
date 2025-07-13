@@ -33,16 +33,43 @@ This system allows admins to manage flights, airlines, airports, and users, whil
 
 **No coding experience needed!**
 
-1. **Open VS Code** (or any code editor) and open a new empty folder.
-2. **Open the terminal:**
+### Prerequisites (Install these first!)
+- [Git](https://git-scm.com/downloads)
+- [Node.js](https://nodejs.org/)
+- [MongoDB](https://www.mongodb.com/try/download/community)
+
+---
+
+### You can use **either** of the following methods:
+
+#### **A) Using VS Code**
+1. Open VS Code and open a new empty folder.
+2. Open the terminal:
    - Shortcut: <kbd>Ctrl</kbd> + <kbd>`</kbd> (backtick)
    - Or: Menu → View → Terminal
-   - Or: Open Command Prompt (Windows) or Terminal (Mac/Linux)
-3. **Copy and paste this command and press Enter:**
+3. Copy and paste the command below and press Enter.
 
-   ```sh
-   (git --version 2>&1 >nul || (echo ============================== && echo Git is not installed! && echo Please install Git from: https://git-scm.com/downloads && echo ============================== && exit /b 1)) && git clone https://github.com/MIbrahimPro/AirlineManagement.git && cd AirlineManagement/backend && node scripts/initialize.js
-   ```
+#### **OR**
+
+#### **B) Using PowerShell (Windows)**
+1. Open PowerShell (press <kbd>Win</kbd> + <kbd>R</kbd>, type `powershell`, press Enter)
+2. Navigate to the folder where you want the project (e.g., `cd Desktop`)
+3. Copy and paste the command below and press Enter.
+
+---
+
+```powershell
+if (-not (Get-Command git -ErrorAction SilentlyContinue)) {
+  Write-Host "==============================" -ForegroundColor Red
+  Write-Host "Git is not installed!" -ForegroundColor Red
+  Write-Host "Please install Git from: https://git-scm.com/downloads" -ForegroundColor Red
+  Write-Host "==============================" -ForegroundColor Red
+  exit
+}
+git clone https://github.com/MIbrahimPro/AirlineManagement.git
+cd AirlineManagement
+node scripts/initialize.js
+```
 
 **If you see a message about Git not being installed,** please install it from [git-scm.com/downloads](https://git-scm.com/downloads) and try again.
 
