@@ -44,10 +44,20 @@ console.log('User(s):  alice@example.com / pswd1, bob@example.com / pswd1, carol
 
 // 6. Start server
 console.log('Starting server...');
-const child = spawn(process.platform === 'win32' ? 'npm.cmd' : 'npm', ['start'], {
-    cwd: path.join(__dirname, '..'),
-    stdio: 'inherit',
-});
+try {
+    const child = spawn(process.platform === 'win32' ? 'npm.cmd' : 'npm', ['start'], {
+        cwd: path.join(__dirname, '..'),
+        stdio: 'inherit',
+    });
+} catch (e) {
+    console.log('\n\n\n\n\n\n\n==============================');
+    console.log('Could not start the server automatically.');
+    console.log('Please run: npm start');
+    console.log('Or: node server.js');
+    console.log('Then open your browser and go to: http://localhost:5000');
+    console.log('==============================\n\n\n\n\n\n\n');
+    process.exit(0);
+}
 
 // 7. Open browser
 setTimeout(() => {
@@ -61,6 +71,6 @@ setTimeout(() => {
             execSync(`xdg-open ${url}`);
         }
     } catch (e) {
-        console.log('\nPlease open your browser and go to: ' + url + '\n');
+        console.log('\n\n\n\n\n\n\n\nPlease open your browser and go to: ' + url + '\n\n\n\n\n\n\n\n');
     }
 }, 4000);

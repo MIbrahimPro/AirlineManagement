@@ -60,10 +60,10 @@ This system allows admins to manage flights, airlines, airports, and users, whil
 
 ```powershell
 if (-not (Get-Command git -ErrorAction SilentlyContinue)) {
-  Write-Host "==============================" -ForegroundColor Red
+  Write-Host "\n\n\n\n\n\n==============================" -ForegroundColor Red
   Write-Host "Git is not installed!" -ForegroundColor Red
   Write-Host "Please install Git from: https://git-scm.com/downloads" -ForegroundColor Red
-  Write-Host "==============================" -ForegroundColor Red
+  Write-Host "==============================\n\n\n\n\n\n" -ForegroundColor Red
   exit
 }
 git clone https://github.com/MIbrahimPro/AirlineManagement.git
